@@ -26,5 +26,8 @@ htmlcov/
 .env.development
 .env.production
 .env.*.local
+# catch .env files even when the name carries hidden direction marks (RTL)
+*.env
+*.env.local
 runtime-data/
 runtime-logs/
