@@ -28,3 +28,10 @@ htmlcov/
 .env.*.local
 runtime-data/
 runtime-logs/
+*.env
+*.env.local
+.env1.local
+.neon
+
+# editor and manual backup copies
+*.bak
