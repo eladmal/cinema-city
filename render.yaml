@@ -1,0 +1,45 @@
+# Render Blueprint: one Docker web service backed by the existing Neon database.
+# Values marked "sync: false" are entered in the Render dashboard and never stored in Git.
+services:
+  - type: web
+    name: cinema-city
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    region: frankfurt
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: API_MODE
+        value: combined
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: STORAGE_BACKEND
+        value: neon
+      - key: AUTH_ENABLED
+        value: "true"
+      - key: AUTH_PROVIDER
+        value: clerk
+      - key: CLERK_BACKEND_API_URL
+        value: https://api.clerk.com
+      - key: ALLOWED_HOSTS
+        sync: false
+      - key: CLERK_AUTHORIZED_PARTIES
+        sync: false
+      - key: MANAGER_EMAILS
+        sync: false
+      - key: NEON_DATABASE_URL
+        sync: false
+      - key: CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: CLERK_ISSUER
+        sync: false
+      - key: CLERK_JWKS_URL
+        sync: false
+      - key: CLERK_FRONTEND_API_URL
+        sync: false
