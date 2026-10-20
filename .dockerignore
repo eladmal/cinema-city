@@ -20,4 +20,8 @@ build
 *.key
 secrets.yml
 .DS_Store
+<<<<<<< HEAD
 Thumbs.db
+=======
+Thumbs.db
+>>>>>>> b7be61d32620603a2670486e9b6dda86b334e763
